@@ -1,21 +1,34 @@
 package task255;
+
+import java.util.Scanner;
+
 //g. Write a program to print the number in reverse order.12345
 
 public class Task7 {
 	
 	public static void main(String[] args) {
 		
+		Scanner sc = new Scanner(System.in);
 
-		int num = 12345;
-		int reverse = 0;  
-		while(num != 0)   
+		System.out.print("Enter any Number: ");
+		int num = sc.nextInt();
+		int revnum = 0;  
+		int remainder = 0;
+		while(num > 0)   
 		{  
-	
-			int remainder = num % 10;  
-			reverse = reverse * 10 + remainder;  
+			if(num > 10) 
+			{
+				remainder = num % 10;
+			}
+			else
+			{
+				remainder = num;
+			}
+			
+			revnum = revnum * 10 + remainder;  
 			num = num/10;  
 		}  
-		System.out.println("The reverse of the given number is: " + reverse);  
+		System.out.println("The reverse of the given number is : " + revnum);  
 		
 	}
 
