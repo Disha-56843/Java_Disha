@@ -1,3 +1,4 @@
+package LoopPattern;
 
 public class Pattern1 {
 
@@ -17,5 +18,6 @@ public class Pattern1 {
 			}
 		
 	}
+
+
 }
-	
