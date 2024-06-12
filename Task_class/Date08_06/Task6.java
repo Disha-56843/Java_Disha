@@ -21,12 +21,6 @@ public class Task6 {
 
         System.out.print("Input second floating-point number: ");
         double secondNumber = sc.nextDouble();
-//
-//        // Multiply by 100 to compare up to two decimal places
-//        double difference = Math.abs(firstNumber * 100 - secondNumber * 100);
-//
-//        // Allow a small tolerance for floating-point representation errors
-//        final double tolerance = 0.01; // Adjust tolerance as needed
 
         if (firstNumber == secondNumber) {
             System.out.println("These numbers are the same");
