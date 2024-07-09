@@ -11,4 +11,6 @@ catch (Exception e)
 
 public class Que39 {
 
+	
+	
 }
