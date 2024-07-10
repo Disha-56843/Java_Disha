@@ -17,7 +17,7 @@ public class Que73 {
 		System.out.println("Original array list: " + array);
 		
 		String new_array = "Python";
-		array.set(2, new_array);
+		array.set(1, new_array);
 		
 		int num = array.size();
 		System.out.println("Replace third element with 'Python'.");
