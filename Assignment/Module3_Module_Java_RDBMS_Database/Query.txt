@@ -84,31 +84,31 @@ Query: SELECT * FROM emp WHERE DeptNo='20' and Job IN (SELECT Job FROM emp WHERE
 
 Que 15: .List the Emps who’s Sal is same as FORD or SMITH in desc order of Sal.
 
-Query: 
+Query: SELECT * FROM emp WHERE sal in (SELECT sal FROM emp WHERE Ename='FORD' OR Ename='SMITH ') ORDER BY sal DESC;
 
 ------------------------------------------------------------
 
 Que 16: List the emps whose jobs same as SMITH or ALLEN.
 
-Query: 
+Query: SELECT * FROM emp WHERE Job in (SELECT Job FROM emp WHERE Ename='SMITH ' OR Ename='ALLEN');
 
 ------------------------------------------------------------
 
 Que 17: .Any jobs of deptno 10 those that are not found in deptno 20.
 
-Query: 
+Query: SELECT * FROM emp WHERE Deptno='10' AND Job NOT in (SELECT Job FROM emp WHERE Deptno='20');
 
 ------------------------------------------------------------
 
 Que 18: Find the highest sal of EMP table.
 
-Query: 
+Query: SELECT MAX(Sal) from emp;
 
 ------------------------------------------------------------
 
 Que 19: Find details of highest paid employee.
 
-Query: 
+Query: SELECT * FROM emp WHERE Sal IN (SELECT MAX(Sal) from emp);
 
 ------------------------------------------------------------
 
@@ -120,19 +120,19 @@ Query:
 
 Que 21: .List the emps whose names contains ‘A’.
 
-Query: 
+Query: SELECT * FROM emp WHERE Ename LIKE '%A%';
 
 ------------------------------------------------------------
 
 Que 22: Find all the emps who earn the minimum Salary for each job wise in ascending order.
 
-Query: 
+Query: SELECT * FROM emp WHERE Sal IN (SELECT MIN(Sal) FROM emp GROUP BY Job) ORDER BY Sal ASC;
 
 ------------------------------------------------------------
 
 Que 23: List the emps whose sal greater than Blake’s sal.
 
-Query: 
+Query: SELECT * FROM  emp WHERE Sal > (SELECT Sal FROM emp WHERE Ename='Blake' );
 
 ------------------------------------------------------------
 
@@ -146,16 +146,44 @@ Que 25: Create a procedure with dno asinput parameter to fetch ename and dname.
 
 Query: 
 
+DELIMITER //
+
+	CREATE PROCEDURE viewdatpro(INOUT mydno int) 
+    
+    BEGIN
+    	SELECT Ename FROM emp WHERE Deptno = mydno;
+        SELECT Dname FROM dept WHERE Deptno = mydno;
+    END //
+    
+
+DELIMITER ;
+   
 ------------------------------------------------------------
 
 Que 26: Add column Pin with bigint data type in table student.
 
-Query: 
+Query: ALTER TABLE student ADD Pin BIGINT(10);
 
 ------------------------------------------------------------
 
-Que 27: Modify the student table to change the sname length from 14 to 40. Create trigger to insert data in emp_log table whenever any update of sal in EMP table. You can set action as ‘New Salary’
+Que 27: Modify the student table to change the sname length from 14 to 40. 
 
-Query: 
+Query: ALTER TABLE student CHANGE SName Sname VARCHAR(40);
+
+------------------------------------------------------------
+**
+Que 28: Create trigger to insert data in emp_log table whenever any update of sal in EMP table. You can set action as ‘New Salary’.
+
+Query: DELIMITER $$
+
+	CREATE TRIGGER New_Salary AFTER UPDATE ON emp FOR EACH ROW
+    
+    BEGIN
+
+    	insert into emp_log SET action_performed='deleted a new subscriber', New_salary =  new.sal;
+    
+END $$
+
+DELIMITER //
 
 ------------------------------------------------------------
