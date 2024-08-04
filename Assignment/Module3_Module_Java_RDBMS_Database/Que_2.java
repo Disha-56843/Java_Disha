@@ -1,8 +1,8 @@
 package Module3_Module_Java_RDBMS_Database;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,6 +16,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
+import com.mysql.jdbc.ResultSetMetaData;
 
 public class Que_2 implements ActionListener 
 {
@@ -24,55 +27,15 @@ public class Que_2 implements ActionListener
 	JLabel l1,l2,l3,l4,l5,l6;
 	JTextField tf1,tf2,tf3,tf4;
 	JRadioButton jrb1,jrb2;
+	ButtonGroup bg;
 	JButton btn1,btn2,btn3,btn4,btn5,btn6;
 	JTable jt;
-	
+	DefaultTableModel model;
+	JScrollPane scrollpane;
 	 
-
+	
 	public Que_2() {
-		// TODO Auto-generated constructor stub
-		
-//		String db ="registration";
-//		String host="jdbc:mysql://localhost:3306/";
-//		String url = host+db;
-		
-//		Object[][] data = null;
-		
-//		try {
-//			
-//				Class.forName("com.mysql.jdbc.Driver");
-//				Connection con = DriverManager.getConnection(url,"root","");
-//			
-//				String sql = "select * from registration";
-//				Statement stmt = con.createStatement();
-//
-//				ResultSet set = stmt.executeQuery(sql);
-//			
-//			
-//
-//				while(set.next())
-//				{
-//					String id = String.valueOf(set.getInt(1));
-//					String name = set.getString(2);
-//					String gender = set.getString(3);
-//					String address = set.getString(4);
-//					String contact = set.getString(5);
-//					
-//					String data[]={id,name,gender,address,contact};	
-		String data[][]={
-//					{1,id,},    
-					{"102","Jai","780000"},    
-					{"101","Sachin","700000"}
-//				}
-			};   
-//			}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-
-//	String column[]={"S.No","ID","NAME","Gender","Address","Contact"}; 
-		String column[]={"S.No","ID","NAME"}; 
+		// TODO Auto-generated constructor stub 
 		
 		
 		frame = new JFrame("REGISTRATION FRAME");
@@ -113,7 +76,7 @@ public class Que_2 implements ActionListener
 		jrb2 = new JRadioButton("Female");
 		jrb2.setBounds(150, 136, 97, 23);
 		
-		ButtonGroup bg = new ButtonGroup();
+		bg = new ButtonGroup();
 		bg.add(jrb1);
 		bg.add(jrb2);
 		
@@ -138,18 +101,226 @@ public class Que_2 implements ActionListener
 		
 		
 		
-		JTable jt = new JTable(data,column);
+//		jt.getTableHeader().setReorderingAllowed(false);
+		jt = new JTable(model);
+		jt.setBounds(250,16,500,300);
 		
 		
-		JScrollPane sp = new JScrollPane(jt);
-		sp.setBounds(250,16,520,310);
+		scrollpane = new JScrollPane(jt,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollpane.setBounds(250,16,520,310);
 		
-		btn1.addActionListener(this);
-		btn2.addActionListener(this);
-		btn3.addActionListener(this);
+		
+		btn1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				// Data Update
+				if(e.getSource() == btn1)
+				{
+					frame.setVisible(false);
+				}
+				
+			}
+		});
+		btn2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				// Data insert or register 
+				if(e.getSource() == btn2)
+				{
+					//data for connection
+					String db ="registration";
+					String host="jdbc:mysql://localhost:3306/";
+					String url = host+db;
+					
+					try {
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection(url,"root","");
+						
+						String id2 = tf1.getText().toString();
+						int id = Integer.parseInt(id2);
+						String name = tf2.getText().toString();
+						String gender = null;
+						String address = tf3.getText().toString();
+						String contact = tf4.getText().toString();
+						
+						
+						if(jrb1.isSelected())
+						{
+							 gender = jrb1.getText().toString();
+						}
+						else if(jrb2.isSelected())
+						{
+							 gender = jrb2.getText().toString();
+						}
+						
+						String sql = "insert into registration values ('"+id+"','"+name+"','"+gender+"','"+address+"','"+contact+"')";
+						
+						//query run
+						Statement stmt = con.createStatement();
+						int data = stmt.executeUpdate(sql);
+						
+						if(data>0)
+						{
+							System.out.println("Registration completed");
+							
+						}
+						else
+						{
+							System.out.println("Error");
+						}
+						
+					} 
+					catch (Exception e1) 
+					{
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}	
+				
+			}
+		});
+		btn3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				if(e.getSource() == btn3)
+				{
+					String id = tf1.getText().toString();
+					int id2 = Integer.parseInt(id);
+					
+					String db ="registration";
+					String host="jdbc:mysql://localhost:3306/";
+					String url = host+db;
+					
+					try {
+						Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection(url,"root","");
+						
+						String sql = "delete from registration where id='"+id2+"'";
+						Statement stmt = con.createStatement();
+						
+						int data = stmt.executeUpdate(sql);
+						
+						if(data>0)
+						{
+							
+							System.out.println("Data deleted successfully");
+							
+						}
+						else
+						{
+							System.out.println("Error");
+						}
+						
+					} 
+					catch (Exception e1) 
+					{
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				}
+				
+			}
+		});
 		btn4.addActionListener(this);
+		btn5.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				if(e.getSource() == btn5)
+				{
+				
+					// fields will be blank 
+
+			        tf1.setText(""); 
+
+			        tf2.setText(""); 
+
+			        
+			        bg.clearSelection(); 
+
+			        tf3.setText(""); 
+
+			        tf4.setText("");
+					
+				}
+				
+				
+			}
+		});
+		btn6.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				if(e.getSource() == btn6)
+				{
+					
+					model = new DefaultTableModel();
+					
+					String db ="registration";
+					String host="jdbc:mysql://localhost:3306/";
+					String url = host+db;
+					
+
+					
+					try {
+						
+							Class.forName("com.mysql.jdbc.Driver");
+							Connection con = DriverManager.getConnection(url,"root","");
+						
+							Statement stmt = con.createStatement();
+							String sql = "select * from registration";
+			
+							ResultSet rs = stmt.executeQuery(sql);
+							ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
+						
+							model = (DefaultTableModel) jt.getModel();
+							
+							int cols = rsmd.getColumnCount();
+							String[] colName = new String[cols];
+							for(int i = 0; i < cols; i++)
+								colName[i] = rsmd.getColumnName(i+1);
+							
+							while(rs.next())
+							{
+								String srno = String.valueOf(rs.getInt(1));
+								String id = String.valueOf(rs.getInt(2));
+								String name = rs.getString(3);
+								String gender = rs.getString(4);
+								String address = rs.getString(5);
+								String contact = rs.getString(6);
+								
+								model.setColumnIdentifiers(colName);
+								String data[]={srno,id,name,gender,address,contact};	
+								model.addRow(data);
+
+							};   
+						
+						}
+					catch(Exception e1)
+					{
+						e1.printStackTrace();
+					}
+				}
+				
+			}
+		});
 		
-		frame.add(sp);
+		frame.add(scrollpane);
+		frame.add(jt);
 		frame.add(l1);
 		frame.add(l2);
 		frame.add(l3);
@@ -174,12 +345,6 @@ public class Que_2 implements ActionListener
 		
 	}
 	
-	public static void main(String[] args) 
-	{
-	
-		new Que_2();
-		
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) 
@@ -187,103 +352,12 @@ public class Que_2 implements ActionListener
 		// TODO Auto-generated method stub
 		
 
-		// Data Update
-		if(e.getSource() == btn1)
-		{
-			frame.setVisible(false);
-		}
 		
-		// Data insert or register 
-		if(e.getSource() == btn2)
-		{
-			//data for connection
-			String db ="registration";
-			String host="jdbc:mysql://localhost:3306/";
-			String url = host+db;
-			
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection(url,"root","");
-				
-				String id2 = tf1.getText().toString();
-				int id = Integer.parseInt(id2);
-				String name = tf2.getText().toString();
-				String gender = null;
-				String address = tf3.getText().toString();
-				String contact = tf4.getText().toString();
-				
-				
-				if(jrb1.isSelected())
-				{
-					 gender = jrb1.getText().toString();
-				}
-				else if(jrb2.isSelected())
-				{
-					 gender = jrb2.getText().toString();
-				}
-				
-				String sql = "insert into registration values ('"+id+"','"+name+"','"+gender+"','"+address+"','"+contact+"')";
-				
-				//query run
-				Statement stmt = con.createStatement();
-				int data = stmt.executeUpdate(sql);
-				
-				if(data>0)
-				{
-					System.out.println("Registration completed");
-					
-				}
-				else
-				{
-					System.out.println("Error");
-				}
-				
-			} 
-			catch (Exception e1) 
-			{
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}	
+		
+		
 		
 		// Data delete
-		if(e.getSource() == btn3)
-		{
-			String id = tf1.getText().toString();
-			int id2 = Integer.parseInt(id);
-			
-			String db ="registration";
-			String host="jdbc:mysql://localhost:3306/";
-			String url = host+db;
-			
-			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection(url,"root","");
-				
-				String sql = "delete from registration where id='"+id2+"'";
-				Statement stmt = con.createStatement();
-				
-				int data = stmt.executeUpdate(sql);
-				
-				if(data>0)
-				{
-					
-					System.out.println("Data deleted successfully");
-					
-				}
-				else
-				{
-					System.out.println("Error");
-				}
-				
-			} 
-			catch (Exception e1) 
-			{
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
-		}
+		
 		
 		// Data Update
 		if(e.getSource() == btn4)
@@ -308,11 +382,11 @@ public class Que_2 implements ActionListener
 			
 				if(set.next())
 				{
-					int id1 = set.getInt(1);
-					String name = set.getString(2);
-					String gender = set.getString(3);
-					String address = set.getString(4);
-					String contect = set.getString(5);
+					int id1 = set.getInt(2);
+					String name = set.getString(3);
+					String gender = set.getString(4);
+					String address = set.getString(5);
+					String contect = set.getString(6);
 					
 					tf2.setText(name);
 					tf3.setText(address);
@@ -368,7 +442,45 @@ public class Que_2 implements ActionListener
 				e2.printStackTrace();
 			}
 			
-		}					
-	}
+		}	
+		
+		if(e.getSource() == btn5)
+		{
+		
+			// fields will be blank 
+
+	        tf1.setText(""); 
+
+	        tf2.setText(""); 
+
+	        
+	        bg.clearSelection(); 
+
+	        tf3.setText(""); 
+
+	        tf4.setText("");
+			
+		}
+		
+		
+			}
+	private void resetFields(){ 
+
+        //calling method blankfields() 
+
+        blankFields(); 
+
+  } 
+	private void blankFields(){ 
+
+        
+
+  }
 	
+	public static void main(String[] args) 
+	{
+	
+		new Que_2();
+		
+	}
 }

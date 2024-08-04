@@ -174,7 +174,8 @@ Query: ALTER TABLE student CHANGE SName Sname VARCHAR(40);
 **
 Que 28: Create trigger to insert data in emp_log table whenever any update of sal in EMP table. You can set action as ‘New Salary’.
 
-Query: DELIMITER $$
+Query: 
+DELIMITER $$
 
 	CREATE TRIGGER New_Salary AFTER UPDATE ON emp FOR EACH ROW
     
