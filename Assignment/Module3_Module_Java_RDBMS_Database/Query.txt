@@ -114,7 +114,7 @@ Query: SELECT * FROM emp WHERE Sal IN (SELECT MAX(Sal) from emp);
 
 Que 20: Find the totalsal given to the MGR.
 
-Query: 
+Query: SELECT SUM(Sal) FROM emp WHERE Job = 'MANAGER';
 
 ------------------------------------------------------------
 
@@ -138,7 +138,7 @@ Query: SELECT * FROM  emp WHERE Sal > (SELECT Sal FROM emp WHERE Ename='Blake' )
 
 Que 24: Create view v1 to select ename, job, dname, loc whose deptno are same.
 
-Query: 
+Query:  create view myview as SELECT emp.Ename, emp.Job, emp.Deptno, dept.DeptNo,dept.LOC from emp_table_data,emp_table_data WHERE emp.Deptno = dept.DeptNo
 
 ------------------------------------------------------------
 
