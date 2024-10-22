@@ -1,0 +1,8 @@
+jboss
+spring tools 4 
+maven
+
+
+internal
+maven-archetype-quickstar - core java
+maven-architact
