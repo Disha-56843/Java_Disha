@@ -173,15 +173,7 @@
             </div>
             <div class="field">
                <input type="text" value="<%=m.getAddress() %>" name="address" required>
-            </div>
-            <div class="">
-               <label>Gender:</label>
-               <label>Male</label>
-               <input type="radio" name="gender" value="<%=m.getGender() %>">
-                <label>Female</label>
-               <input type="radio" name="gender" value="<%=m.getGender() %>">
-            </div>
-            
+            </div>            
         
             <div class="field">
                <input type="submit" value="Update">
