@@ -1,0 +1,27 @@
+Que: Understanding CRUD Operations in Hibernate.
+
+Ans.
+
+CRUD Operations (Create, Read, Update, Delete):
+
+Create: Use session.save() to add new data to the database.
+Read: Use session.get() to fetch data from the database.
+Update: Use session.update() to modify existing data.
+Delete: Use session.delete() to remove data from the database.
+
+--------------------------------------------------------------
+
+Que: Writing HQL (Hibernate Query Language) .
+
+Ans.
+
+What is HQL?
+HQL is like SQL, but instead of working with tables and columns, it works with Java objects and their properties.
+
+Examples:
+Fetch data: FROM User WHERE age > 18
+Update data: UPDATE User SET name = 'John' WHERE id = 1
+Delete data: DELETE FROM User WHERE id = 2
+
+ Criteria API:
+If you don’t know the exact query in advance, you can use the Criteria API to build queries programmatically. It is flexible and avoids writing query strings directly.

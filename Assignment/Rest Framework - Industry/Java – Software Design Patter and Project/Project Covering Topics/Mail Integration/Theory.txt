@@ -1,0 +1,30 @@
+Que: How to send emails from a Java web application using JavaMail API.
+
+Ans.
+
+To send emails from a Java web application:
+
+1)Add JavaMail Dependency: Include the JavaMail API in your project (either as a dependency in pom.xml for Maven or by adding the JAR files manually).
+2)Create a Session: Use Session.getInstance() to create a mail session with SMTP properties.
+3)Compose and Send the Email: Create a MimeMessage and set the sender, recipient, subject, and body of the email. Use Transport.send() to send the email.
+
+Example:
+
+Properties properties = new Properties();
+properties.put("mail.smtp.host", "smtp.example.com");
+properties.put("mail.smtp.port", "25");
+Session session = Session.getInstance(properties);
+MimeMessage message = new MimeMessage(session);
+message.setFrom(new InternetAddress("from@example.com"));
+message.addRecipient(Message.RecipientType.TO, new InternetAddress("to@example.com"));
+message.setSubject("Test Email");
+message.setText("This is a test email.");
+Transport.send(message);
+
+--------------------------------------------------------------------
+
+Que: Explanation of SMTP and how it’s used for sending emails.
+
+Ans.
+
+SMTP (Simple Mail Transfer Protocol) is a protocol used to send and receive emails over the internet. It specifies the rules for email servers to exchange messages between email clients. When sending an email, your application connects to an SMTP server (like Gmail, Outlook, etc.) and uses it to send the message to the recipient’s mail server.

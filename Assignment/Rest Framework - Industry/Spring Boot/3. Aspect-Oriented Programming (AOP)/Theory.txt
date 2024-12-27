@@ -1,0 +1,13 @@
+Que: What is AOP (Aspect-Oriented Programming)?
+
+Ans.
+
+What is AOP?
+AOP separates common tasks like logging, security, or transactions from main code.
+
+Key Terms:
+
+*Aspect: A module for a specific task (e.g., logging).
+*Joinpoint: When/where an action happens (e.g., before saving data).
+*Advice: What action to perform (e.g., log a message).
+*Pointcut: Defines which parts of code are affected.

@@ -1,0 +1,25 @@
+Que: Introduction to AJAX and its role in improving the user experience by enabling asynchronous
+requests.
+
+Ans.
+
+AJAX (Asynchronous JavaScript and XML) is a technique used to make web pages more interactive. With AJAX, you can load new data from the server without reloading the entire page. This makes your website feel faster and smoother.
+
+------------------------------------------------------------
+
+Que: Explanation of how AJAX works in combination with JavaScript and the server.
+
+Ans.
+
+1) Client-Side (JavaScript): JavaScript sends a request to the server without reloading the page.
+2) Server-Side: The server processes the request and sends back data (usually in JSON or XML).
+3) Client-Side (JavaScript): JavaScript processes the response and updates the page without reloading it.
+
+Example:
+
+fetch('/getData')
+  .then(response => response.json())
+  .then(data => {
+    // Update the page with the new data
+  });
+AJAX allows websites to be more dynamic and responsive, improving the user experience.

@@ -1,0 +1,24 @@
+Que: What is template integration in web applications.
+
+Ans. 
+
+Template Integration in Web Applications:
+Template integration refers to the use of predefined, reusable layouts or structures (templates) in web applications. These templates often include standard HTML, CSS, and JavaScript components, which can be easily customized and integrated into web applications to speed up development and ensure consistency in design. By using templates, developers can focus on implementing business logic and features, rather than building UI components from scratch.
+
+------------------------------------------------------------
+
+Que:  Importance of using pre-built templates for faster UI development.
+
+Ans.  
+
+Pre-built templates are essential for faster UI development because:
+
+Time-saving: They provide ready-made UI components, eliminating the need for developers to create UI elements from scratch.
+
+Consistency: Templates help maintain a consistent look and feel across the application.
+
+Customization: Templates are usually flexible and can be easily modified to suit the needs of the application.
+
+Responsive design: Many pre-built templates are designed to be responsive, which ensures that the application works well on various devices.
+
+Cost-effective: Using templates reduces the amount of effort and resources needed to develop the UI, making the development process more efficient.

@@ -1,0 +1,30 @@
+Que: What are Web Services?
+
+Ans.
+
+Definition and Importance
+Web services allow different applications to communicate with each other over the internet. They enable data exchange and functionality sharing between diverse systems.
+
+Types of Web Services:
+
+1)SOAP (Simple Object Access Protocol):
+
+*Uses XML to send and receive messages.
+*Ensures secure and structured communication.
+
+2)REST (Representational State Transfer):
+
+*Relies on standard HTTP methods like GET, POST, PUT, and DELETE.
+*Simple and lightweight, commonly used for web APIs.
+
+-----------------------------------------------------------------------
+
+Que: Advantages of Web Services.
+
+Ans.
+
+Advantages of Web Services:
+
+*Platform and Language Independence: Works across different operating systems and programming languages.
+*System Integration: Connects diverse systems seamlessly.
+*Supports Microservices Architecture: Helps build small, independent services that work together.

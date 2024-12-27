@@ -1,0 +1,48 @@
+Que: What is Spring Framework?
+
+Ans.
+
+The Spring Framework is a popular tool in Java used to build all kinds of applications, like web apps or backend services. It makes development easier by managing how different parts of an application work together.
+
+Why Use Spring?
+It reduces the amount of code you need to write and helps developers focus on solving problems rather than managing technical details like object creation and connections.
+
+Key Features of Spring:
+Inversion of Control (IoC):
+
+Instead of creating and managing objects yourself, Spring does it for you.
+Dependency Injection (DI):
+
+Spring automatically provides the things (dependencies) an object needs to work.
+Aspect-Oriented Programming (AOP):
+
+You can add extra functionality like logging or security without changing the main code.
+Transaction Management:
+
+It helps handle database operations safely and easily.
+Flexible for All Applications:
+
+Spring can be used for both web-based and normal (non-web) applications.
+
+------------------------------------------------------------------
+
+Que: Spring Architecture
+
+Ans.
+
+Spring is divided into different parts (modules), each doing a specific job:
+
+1)Core Container:
+Handles IoC and DI to manage objects.
+
+2)Spring AOP:
+Adds extra features (like logging) to your app without changing the main code.
+
+3)Spring ORM:
+Connects Spring to tools like Hibernate to handle databases.
+
+4)Spring Web:
+Used to create web-based apps.
+
+5)Spring MVC:
+Helps you organize your web app into three parts: Model (data), View (UI), and Controller (logic).

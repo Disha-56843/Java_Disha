@@ -1,0 +1,45 @@
+Que: What is Spring MVC?
+
+Ans.
+
+Spring MVC is a framework for building web applications using the MVC design pattern.
+
+MVC stands for:
+Model: Manages the data.
+View: Displays the data (e.g., HTML pages).
+Controller: Handles user input and decides what to do.
+
+---------------------------------------------------------------------
+
+Que: Spring MVC Components
+
+Ans.
+
+Important Parts of Spring MVC:
+
+Controller:
+Handles requests from the user.
+
+Model:
+Holds data to send to the view.
+
+View:
+Displays the data in a user-friendly way (e.g., HTML, Thymeleaf).
+
+DispatcherServlet:
+A central part that manages the flow of requests in the app.
+
+---------------------------------------------------------------------
+
+Que: Request Mapping in Spring MVC.
+
+Ans.
+
+Use annotations like:
+
+@RequestMapping: Maps a request to a method.
+@GetMapping / @PostMapping: Handle GET and POST requests.
+
+You can also use:
+Path Variables to capture parts of the URL.
+Request Parameters to handle form data.

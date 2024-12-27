@@ -1,0 +1,81 @@
+Que: Spring MVC Overview
+
+Ans.
+
+What is MVC?
+MVC stands for Model-View-Controller, a design pattern to organize code:
+
+*Model: Manages data and business rules.
+*View: Displays the UI (what users see).
+*Controller: Handles user input and decides what to do with it.
+
+-----------------------------------------------------------------------
+
+Que: Template Integration
+
+Ans.
+
+What are Templates?
+Templates are files (like HTML) that help create dynamic web pages.
+
+Popular Templates:
+
+*Thymeleaf: Modern and user-friendly.
+*JSP: Traditional and older.
+
+Why Use Templates?
+
+*Makes web pages dynamic (change based on user input).
+*Separates design (UI) from logic (code).
+
+------------------------------------------------------------------------
+
+Que: CRUD Operations
+
+Ans.
+
+What is CRUD?
+CRUD stands for Create, Read, Update, Delete—basic operations for managing data in apps.
+
+Example:
+
+1)Create: Add new data (e.g., save a user).
+2)Read: Fetch data (e.g., show all users).
+3)Update: Modify existing data (e.g., change a user’s name).
+4)Delete: Remove data (e.g., delete a user).
+
+How it Works in Spring MVC:
+
+*Controller: Handles requests (e.g., /addUser).
+*Model: Manages data.
+*View: Displays results (e.g., "User added!").
+
+------------------------------------------------------------------------
+
+Que: Form Validation
+
+Ans.
+
+Why Validate Forms?
+To make sure users enter correct data (e.g., an email address).
+
+How to Validate in Spring?
+
+1)Add annotations like @NotNull (cannot be empty) or @Email (must look like an email).
+2)Use @Valid to check data.
+3)Show error messages if data is invalid.
+
+------------------------------------------------------------------------
+
+Que: Pagination
+
+Ans.
+
+What is Pagination?
+Pagination splits large amounts of data into smaller, manageable chunks.
+
+How to Add Pagination in Spring MVC?
+
+1)Use Pageable and Page interfaces in Spring Data JPA.
+2)Pass the page information (e.g., page=1, size=10) in your requests.
+3)Display results page by page.

@@ -1,0 +1,54 @@
+Que: Spring REST Overview
+
+Ans.
+
+Creating RESTful Services:
+
+*Use Spring Boot to build REST APIs.
+*@RestController: Marks a class as a REST API controller.
+*Handles HTTP requests and sends responses in JSON or XML format.
+
+-------------------------------------------------------------------------
+
+Que: Pagination
+
+Ans.
+
+*Handles large datasets by dividing them into smaller chunks.
+*Use Pageable and Page interfaces from Spring Data JPA for easy pagination.
+
+-------------------------------------------------------------------------
+
+Que: CRUD Operations
+
+Ans.
+
+Create: Add new data.
+Read: Fetch data.
+Update: Modify existing data.
+Delete: Remove data.
+Spring Data JPA simplifies CRUD operations.
+
+-------------------------------------------------------------------------
+
+Que: Fetching Data from Multiple Tables
+
+Ans.
+
+Use JPA Relationships to fetch related data:
+
+*@OneToOne: One record links to one other record.
+*@OneToMany: One record links to multiple records.
+*@ManyToOne: Multiple records link to one record.
+*@ManyToMany: Many records link to many records.
+
+-------------------------------------------------------------------------
+
+Que: Image Upload/Download
+
+Ans.
+
+*Enable file uploads and downloads in a REST API.
+*Spring handles multipart file data efficiently.
+
+

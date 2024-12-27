@@ -1,0 +1,119 @@
+Que :Session Management Overview
+
+Ans. Why Session Management is Important
+Web applications need session management because HTTP is a stateless protocol, meaning it doesn’t remember anything about a user’s activities between requests. Session management helps:
+
+Keep users logged in while navigating the site.
+Save shopping cart items.
+Personalize the user experience.
+Track user actions securely.
+Difference Between Client-Side and Server-Side Session Management
+Client-Side Session Management:
+
+Data is stored on the user’s device (e.g., cookies, hidden form fields).
+Pros: Reduces server work.
+Cons: Less secure, limited storage.
+Server-Side Session Management:
+
+Data is stored on the server, and only an ID (e.g., session ID) is stored on the user’s device.
+Pros: More secure, no size limits for data.
+Cons: Increases server work.
+
+---------------------------------------------------------
+
+Que: Session
+
+Ans. What is a Session?
+A session is a way to track a user’s activity while they are on a website. It is useful for:
+
+Remembering who the user is (e.g., after login).
+Keeping their data safe (e.g., shopping cart items).
+How to Use Sessions in Java Servlets
+Create a Session:
+
+HttpSession session = request.getSession(); // Create or get a session.
+session.setAttribute("key", "value"); // Save data in the session.
+
+Retrieve a Session:
+
+HttpSession session = request.getSession(false); // Get the session if it exists.
+if (session != null) {
+    String value = (String) session.getAttribute("key"); // Read data.
+}
+
+Destroy a Session:
+
+HttpSession session = request.getSession(false);
+if (session != null) {
+    session.invalidate(); // End the session.
+}
+
+-------------------------------------------
+
+Que: Cookies
+
+Ans.What are Cookies?
+Cookies are small pieces of data stored on the user’s browser. They are sent with every request to the server. Cookies are used to:
+
+Save session IDs.
+Remember user preferences (e.g., language settings).
+How to Work with Cookies in Java Servlets
+
+Create a Cookie:
+
+Cookie cookie = new Cookie("name", "value"); // Create a cookie.
+cookie.setMaxAge(3600); // Cookie expires in 1 hour.
+response.addCookie(cookie); // Send the cookie to the browser.
+
+Read Cookies:
+
+Cookie[] cookies = request.getCookies(); // Get all cookies.
+if (cookies != null) {
+    for (Cookie cookie : cookies) {
+        if ("name".equals(cookie.getName())) {
+            String value = cookie.getValue(); // Read cookie value.
+        }
+    }
+}
+
+Update a Cookie:
+
+Cookie cookie = new Cookie("name", "newValue"); // Create a new cookie with the same name.
+cookie.setMaxAge(3600); // Update its expiry.
+response.addCookie(cookie); // Overwrite the old cookie.
+Delete a Cookie:
+
+java
+Copy code
+Cookie cookie = new Cookie("name", null); // Set value to null.
+cookie.setMaxAge(0); // Expire the cookie immediately.
+response.addCookie(cookie); // Remove it from the browser.
+
+-------------------------------------------------------------
+
+Que: Hidden Form Fields
+
+Ans. What are Hidden Form Fields?
+Hidden form fields are invisible input fields in an HTML form. They are used to send data from one page to another. They are helpful for:
+
+Passing session data when cookies are not used.
+Example:
+
+<input type="hidden" name="sessionId" value="12345">
+
+----------------------------------------------
+
+Que: URL Rewriting
+
+Ans. What is URL Rewriting?
+URL rewriting means adding session information (like session ID) to the URL. It is used to track sessions when cookies are disabled. The session ID is sent back to the server with every request.
+
+Example in Java:
+
+String url = response.encodeURL("nextPage.jsp"); // Adds session ID to the URL.
+response.sendRedirect(url);
+
+Pros:Works even if cookies are turned off.
+Cons:
+1)Session data is visible in the URL, which can be less secure.
+2)URLs may become too long.

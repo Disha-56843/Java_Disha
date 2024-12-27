@@ -1,0 +1,30 @@
+Que: Spring MVC Overview.
+
+Ans.
+
+MVC Design Pattern
+
+*Model: Represents data and business logic.
+*View: Displays data to the user (UI).
+*Controller: Handles user requests and updates the model or view.
+
+Spring MVC Workflow
+
+1)Handles incoming requests.
+2)Maps requests to the appropriate controller method.
+3)Sends the response back to the user.
+
+-----------------------------------------------------------------------
+
+Que: Controller and View
+
+Ans.
+
+Controller:
+
+Manages user requests and processes data.
+Example: @Controller annotation in Spring.
+
+View Template Engine:
+
+Tools like Thymeleaf render dynamic content for the UI.

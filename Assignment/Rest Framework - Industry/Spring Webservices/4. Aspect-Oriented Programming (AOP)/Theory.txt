@@ -1,0 +1,14 @@
+Que: What is AOP (Aspect-Oriented Programming)?
+
+Ans.
+
+What is AOP?
+
+*A programming style that separates common functionalities (e.g., logging, security) from business logic.
+*Helps maintain clean and modular code.
+
+Key Terms
+
+*Aspect: Encapsulates cross-cutting concerns.
+*Advice: Defines what action the aspect performs (Before, After, Around).
+*Joinpoint: A specific execution point in the program (e.g., method call).

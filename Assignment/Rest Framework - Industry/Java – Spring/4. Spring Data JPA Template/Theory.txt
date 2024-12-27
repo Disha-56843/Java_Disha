@@ -1,0 +1,25 @@
+Que: What is Spring Data JPA?
+
+Ans.
+
+Spring Data JPA helps you work with databases easily.
+It uses JPA (Java Persistence API) to map Java objects to database tables.
+
+Why Use Spring Data JPA?
+Saves time by letting you avoid writing complex SQL queries.
+Automatically generates common database operations like find, save, or delete.
+
+------------------------------------------------------------------
+
+Que: Spring Data JPA Components
+
+Ans.
+
+Main Parts of Spring Data JPA:
+
+1)Repositories:
+Interfaces that handle database operations automatically.
+2)Entities:
+Java classes that represent tables in the database.
+3)Query Methods:
+Simple methods like findByName() that Spring translates into SQL.

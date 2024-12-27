@@ -1,0 +1,33 @@
+Que: BeanFactory vs. ApplicationContext
+
+Ans.
+
+1)BeanFactory:
+
+A simple tool that creates and manages objects (called beans) in Spring.
+Only initializes beans when needed, saving memory.
+Basic features only.
+
+2)ApplicationContext:
+
+A more advanced tool than BeanFactory.
+Prepares all beans when the app starts (eager initialization).
+Offers extra features like event handling and integration with AOP.
+
+------------------------------------------------------------------
+
+Que: Spring Beans
+
+Ans.
+
+What is a Bean?
+A bean is any object that Spring manages for you.
+
+Bean Scopes:
+
+*Singleton: Only one instance is created (default).
+*Prototype: A new instance is created each time you need it.
+*Request/Session: Used for web applications to create instances per request or session.
+
+Bean Lifecycle:
+Spring creates a bean, initializes it, and later destroys it when it's no longer needed.

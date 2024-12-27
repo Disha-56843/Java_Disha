@@ -1,0 +1,22 @@
+Que: Introduction to OTP (One-Time Password) and its importance in enhancing security.
+
+Ans.
+
+OTP (One-Time Password) is a password that is valid for only one login session or transaction. It is used to enhance security by ensuring that even if someone obtains the password, they cannot use it again. OTPs are often used in multi-factor authentication (MFA) systems to provide an additional layer of security during login or sensitive transactions.
+
+--------------------------------------------------------------
+
+Que: How to generate and send OTP via email for verification purposes.
+
+Ans.
+
+To generate and send an OTP via email:
+
+1) Generate OTP: Generate a random numeric or alphanumeric OTP using a random number generator or a cryptographic function.
+2) Send OTP via Email: Use the JavaMail API to send the OTP to the user’s email address.
+3) Validate OTP: When the user enters the OTP, compare it with the generated OTP to verify the user’s identity.
+
+Example:
+
+String otp = String.valueOf(new Random().nextInt(999999)); // Generate OTP
+// Send OTP using JavaMail API

@@ -1,0 +1,67 @@
+Que : Introduction to Software Design Patterns.
+
+Ans: 
+
+What are Design Patterns?
+Design patterns are simple and practical ways to solve common problems in software development. They make it easier to write, read, and fix code.
+
+Types of Design Patterns
+Creational Patterns: Help in creating objects.
+
+Singleton: Ensures only one instance of a class exists.
+Factory: Helps create objects without specifying their exact type.
+Structural Patterns: Focus on how to organize classes and objects.
+
+Decorator: Adds new features to an object without changing it.
+Adapter: Makes two different systems work together.
+Behavioral Patterns: Focus on how objects interact.
+
+Observer: Updates multiple objects when something changes.
+Strategy: Lets you switch between different methods.
+
+-------------------------------------------
+
+Que : Introduction to MVC Pattern.
+
+Ans: 
+
+Model-View-Controller (MVC) Architecture Explained
+The MVC pattern is a design architecture that separates an application into three interconnected components:
+
+Model: Represents the application's data and business logic. It directly manages the data, logic, and rules of the application.
+
+View: Displays the data from the Model to the user and captures user input.
+
+Controller: Acts as an intermediary between the Model and the View, handling user input and updating the Model or View accordingly.
+
+Separation of Concerns and Benefits:
+
+Separation of Concerns: MVC divides the application into three distinct layers, each with a well-defined role. This separation allows for independent development, testing, and maintenance of each layer.
+
+Benefits:
+Encourages modularity and scalability.
+Enhances testability by isolating logic from UI.
+Simplifies maintenance by allowing independent updates to components.
+
+------------------------------------------------------
+Que : Introduction to Data Access Object (DAO).
+
+Ans: 
+
+Purpose of the DAO Pattern:
+
+The Data Access Object (DAO) pattern is used to abstract and encapsulate all access to the data source. It separates the persistence logic (interacting with the database) from the business logic of the application, promoting a clean and decoupled architecture.
+
+How DAO Works with MVC:
+
+The Model uses DAO to get or save data in the database.
+The Controller asks the Model for data.
+The View shows the data to the user.
+
+Example:
+
+The user requests data (like "show products").
+The Controller asks the Model for the data.
+The Model uses the DAO to get the data from the database.
+The View shows the data to the user.
+Using DAO makes it easier to manage and update database code.

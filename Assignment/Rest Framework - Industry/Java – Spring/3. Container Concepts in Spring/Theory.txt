@@ -1,0 +1,25 @@
+Que: Spring IoC (Inversion of Control)
+
+Ans.
+
+IoC is a concept where Spring takes care of creating objects and connecting them instead of you doing it manually.
+
+Why IoC is Useful:
+Makes code cleaner and easier to test.
+Reduces dependencies between parts of your app.
+
+--------------------------------------------------------------------
+
+Que: Dependency Injection (DI):
+
+Ans.
+
+DI is how Spring gives objects their required dependencies.
+
+Types of DI:
+
+1)Constructor-Based: Dependencies are passed through the object’s constructor.
+2)Setter-Based: Dependencies are passed using setter methods.
+
+Why Use DI?
+Makes your code simpler and reduces the effort to manage dependencies.

@@ -1,0 +1,33 @@
+Que: What is Spring Tool Suite (STS)?
+
+Ans.
+
+What is STS?
+Spring Tool Suite (STS) is a special version of the Eclipse IDE made for building Java and Spring applications.
+
+Why use STS?
+
+*Spring Boot Support: Quickly create and run Spring Boot apps.
+*Manage Dependencies Easily: Helps handle libraries and tools your project needs.
+*Debugging Made Easy: Great tools for fixing issues in your code.
+*Server Support: Works with servers like Tomcat out of the box.
+
+----------------------------------------------------------------
+
+Que: Installation and Setup.
+
+Ans.
+
+How to Install and Set Up STS?
+
+1)Download STS: Go to spring.io/tools and get STS for your computer.
+2)Install STS: Extract the file and run the setup.
+3)Java Check: Make sure you have Java (JDK) installed and ready.
+4)Start STS: Open it and set a folder to store your projects.
+
+Create Your First Spring Boot Project:
+
+1)Go to File → New → Spring Starter Project.
+2)Add project details like name and type.
+3)Add required dependencies (e.g., Web, JPA).
+4)Click Finish and start coding!

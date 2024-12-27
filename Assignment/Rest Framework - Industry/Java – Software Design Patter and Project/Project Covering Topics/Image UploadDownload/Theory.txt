@@ -1,0 +1,38 @@
+Que: Stepsto upload and download files in Java web applications.
+
+Ans. 
+
+1)File Upload:
+
+*Use the multipart/form-data encoding type for the form that handles file uploads.
+*In the servlet or controller, use request.getPart() to retrieve the file part from the request.
+*Save the file to the server using InputStream and write it to a destination folder.
+
+2)File Download:
+
+*Set the appropriate response content type (e.g., application/octet-stream).
+*Use response.getOutputStream() to write the file's content to the output stream.
+*Optionally, set the Content-Disposition header to prompt the user to download the file.
+
+----------------------------------------------------------------------
+
+Que: Explanation of the multipart request and handling file uploads using MultipartConfig.
+
+Ans. 
+
+A multipart request allows files to be uploaded along with form data. To handle file uploads in a servlet:
+
+1)Enable MultipartConfig: Use the @MultipartConfig annotation on the servlet to indicate that the servlet will handle file uploads.
+2)Configure Multipart Settings: You can specify the maximum file size, request size, and location for storing files.
+3)Handling the File: In the servlet's doPost method, use request.getPart() to retrieve the uploaded file and then save it.
+
+Example:
+
+@MultipartConfig
+public class FileUploadServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Part filePart = request.getPart("file");
+        InputStream fileContent = filePart.getInputStream();
+        // Save file to server
+    }
+}

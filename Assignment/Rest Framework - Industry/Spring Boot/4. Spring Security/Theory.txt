@@ -1,0 +1,55 @@
+Que: Introduction to Spring Security
+
+Ans.
+
+What is Spring Security?
+It’s a tool to secure your application.
+
+What Can It Do?
+
+*Authentication: Checks who the user is.
+*Authorization: Decides what the user is allowed to do.
+*Login Forms: Handles user logins securely.
+
+------------------------------------------------------------------------
+
+Que: Role-Based Authentication
+
+Ans.
+
+What is It?
+Restrict what users can access based on their roles (e.g., USER, ADMIN).
+
+How It Works:
+
+*Assign roles to users.
+*Use annotations like @Secured to protect methods or URLs.
+
+------------------------------------------------------------------------
+
+Que: OAuth2 Authentication
+
+Ans.
+
+What is OAuth2?
+A way to log in using third-party services like Google or Facebook.
+
+Common Flows:
+
+*Authorization Code Grant: The most secure option for web apps.
+*Implicit Grant: Used in simpler apps but less secure.
+
+------------------------------------------------------------------------
+
+Que: Token-Based Authentication (JWT)
+
+Ans.
+
+What is JWT?
+JWT (JSON Web Token) is a small, secure token used to prove who you are.
+
+How It Works:
+
+1)Log in and get a token.
+2)Use the token for every request.
+3)The server checks the token to allow or deny access.

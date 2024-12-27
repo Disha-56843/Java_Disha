@@ -1,0 +1,44 @@
+Que: What is Hibernate?
+
+Ans.
+
+Definition: Hibernate is a Java framework that makes it easy to work with databases by allowing you to use Java objects to store and retrieve data. It eliminates the need to write a lot of SQL queries manually.
+
+Why Hibernate is Better Than JDBC:
+In JDBC, you have to write SQL queries and handle database connections manually, which can be complicated.
+In Hibernate, most of this work is automated, and you can focus on your Java code instead of SQL.
+
+Advantages of Hibernate:
+Works with any database: Hibernate can work with different databases without changing your code.
+Creates tables automatically: Hibernate can generate tables based on your Java classes.
+Simpler queries: Hibernate uses HQL (Hibernate Query Language), which is easier to use than SQL because it works with objects, not database tables.
+
+-----------------------------------------------------------
+
+Que: Hibernate Architecture:
+
+Ans.
+
+1)Key Components:
+
+SessionFactory:
+This is like a factory for creating Session objects. It is set up once when the application starts.
+
+Session:
+This is the main part you use to interact with the database. It helps you save, update, or fetch data.
+
+Transaction:
+This ensures that a group of database operations either succeed completely or fail without affecting the data.
+
+Query:
+Used to write HQL queries to fetch or modify data.
+
+Criteria:
+A tool to build flexible and dynamic queries in Java without writing SQL or HQL directly.
+
+2) How Hibernate Works:
+
+*Hibernate reads configuration details from a file (e.g., hibernate.cfg.xml) where database info is stored.
+*A SessionFactory is created using this configuration.
+*Session objects are created from the SessionFactory to interact with the database.
+*Hibernate converts Java object operations into SQL queries and executes them on the database.

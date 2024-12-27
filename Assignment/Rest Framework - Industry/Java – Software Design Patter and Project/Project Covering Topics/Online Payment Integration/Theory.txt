@@ -1,0 +1,21 @@
+Que: Introduction to online payment gateways (e.g., PayPal, Stripe).
+
+Ans.
+
+Online payment gateways allow businesses to process online transactions securely. PayPal and Stripe are two popular payment gateways that enable businesses to accept payments over the internet. These gateways provide features like credit card processing, fraud protection, and secure transaction handling.
+
+-----------------------------------------------------------------
+
+Que: How to integrate payment gateways into web applications.
+
+Ans.
+
+1) Choose a Payment Gateway: Select a payment gateway like PayPal or Stripe.
+2) Obtain API Keys: Register with the payment provider to get the necessary API keys or credentials.
+3) Integrate API: Use the provider's SDK or API to integrate the payment functionality into your web application. For example, you can create a payment form that submits to the gateway’s API, which then processes the transaction.
+4) Handle the Response: After the payment is processed, the gateway will send a response, which you need to handle to confirm the payment.
+
+Example with Stripe:
+
+Stripe.apiKey = "your_api_key";
+Charge charge = Charge.create(params); // params include amount, currency, etc.

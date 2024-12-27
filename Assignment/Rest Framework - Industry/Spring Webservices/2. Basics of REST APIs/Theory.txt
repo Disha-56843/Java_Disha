@@ -1,0 +1,32 @@
+Que: What is REST (Representational State Transfer)?
+
+Ans.
+
+Overview:
+REST is a design approach for building web services.
+
+Key Principles:
+
+1)Statelessness: Each request contains all required information.
+2)Resource-Based URLs: Resources are identified using unique URLs.
+3)HTTP Methods: Used to perform actions like retrieving or updating data.
+4)Status Codes: Provides feedback (e.g., 200 for success, 404 for not found).
+
+Key REST Concepts
+
+1)Resources: Everything (e.g., users, products) is treated as a resource.
+2)URI: Unique address for each resource.
+3)Stateless Communication: Each client-server interaction is independent.
+
+-----------------------------------------------------------------------
+
+Que: HTTP Methods.
+
+Ans.
+
+HTTP Methods:
+
+GET: Retrieve data.
+POST: Add new data.
+PUT: Update existing data.
+DELETE: Remove data.

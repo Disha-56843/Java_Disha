@@ -1,0 +1,32 @@
+Que: Object Relationships in Hibernate.
+
+Ans.
+
+How Hibernate Handles Relationships:
+Hibernate can manage relationships between Java objects, just like relationships in a database.
+
+Types of Relationships:
+
+1)One-to-One: One object is related to one other object. Example: A User has one Profile.
+
+2)One-to-Many: One object is related to many objects. Example: A Department has many Employees.
+
+3)Many-to-One: Many objects relate to one object. Example: Many Orders belong to one Customer.
+
+4)Many-to-Many: Many objects are related to many objects. Example: Many Students can enroll in many Courses.
+
+---------------------------------------
+
+Que: Mapping Relationships in Hibernate.
+
+Ans.
+
+Annotations:
+
+Use annotations like @OneToOne, @OneToMany, @ManyToOne, and @ManyToMany in your Java classes to define relationships.
+
+Owning vs. Inverse Side:
+The owning side manages the relationship in the database, while the inverse side is just a reference.
+
+Cascade Types:
+Cascade ensures that when you perform an operation (like save or delete) on one object, it automatically applies to related objects.
