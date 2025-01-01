@@ -1,0 +1,51 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header
+{
+    background-color: #dedcda !important;
+    padding-bottom: 60px;
+}
+.site-header {
+    position:static;
+    top: 0;
+    background-color: transparent;
+    width: 100%;
+    z-index: 999999;
+    transition: background-color 0.3s ease;
+  }
+#breadcrumb
+{
+    margin-left: 500px;
+}
+#shop
+{
+    background-color: #faf7f8;
+    color: #000;
+}
+input
+{
+    color: #b8b6b7 ;
+}
+ul li
+{
+    list-style: none;
+}
+#part2
+{
+    background-color: #d7d5d3;
+}
+/* footer
+{
+    margin-top: 50%;
+} */
