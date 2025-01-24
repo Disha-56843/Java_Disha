@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-<title>HotMagazine</title>
+<title>Digital India</title>
 
 <script>
         document.addEventListener("DOMContentLoaded", function () {
