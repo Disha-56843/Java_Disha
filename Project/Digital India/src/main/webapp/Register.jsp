@@ -6,278 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Sign up</title>
 
-
-<style type="text/css">
-	@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
-
-html,body {
-	position: relative;
-	min-height: 100vh;
-	background-color: #E1E8EE !important;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.form-structor {
-	background-color: #222;
-	border-radius: 15px;
-	height: 550px;
-	width: 350px;
-	margin: 2% auto;
-	position: relative;
-	overflow: hidden;
-	
-	&::after {
-		content: '';
-		opacity: .8;
-		position: absolute;
-		top: 0;right:0;bottom:0;left:0;
-		background-repeat: no-repeat;
-		background-position: left bottom;
-		background-size: 500px;
-		
-	}
-	
-	.signup {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		-webkit-transform: translate(-50%, -50%);
-		width: 65%;
-		z-index: 5;
-		-webkit-transition: all .3s ease;
-		
-		
-		&.slide-up {
-			top: 5%;
-			-webkit-transform: translate(-50%, 0%);
-			-webkit-transition: all .3s ease;
-		}
-		
-		&.slide-up .form-holder,
-		&.slide-up .submit-btn {
-			opacity: 0;
-			visibility: hidden;
-		}
-		
-		&.slide-up .form-title {
-			font-size: 1em;
-			cursor: pointer;
-		}
-		
-		&.slide-up .form-title span {
-			margin-right: 5px;
-			opacity: 1;
-			visibility: visible;
-			-webkit-transition: all .3s ease;
-		}
-		
-		.form-title {
-			color: #fff;
-			font-size: 1.7em;
-			text-align: center;
-			
-			span {
-				color: rgba(0,0,0,0.4);
-				opacity: 0;
-				visibility: hidden;
-				-webkit-transition: all .3s ease;
-			}
-		}
-		
-		.form-holder {
-			border-radius: 15px;
-			background-color: #fff;
-			overflow: hidden;
-			margin-top: 50px;
-			opacity: 1;
-			visibility: visible;
-			-webkit-transition: all .3s ease;
-			
-			.input {
-				border: 0;
-				outline: none;
-				box-shadow: none;
-				display: block;
-				height: 30px;
-				line-height: 30px;
-				padding: 8px 15px;
-				border-bottom: 1px solid #eee;
-				width: 100%;
-				font-size: 12px;
-				
-				&:last-child {
-					border-bottom: 0;
-				}
-				&::-webkit-input-placeholder {
-					color: rgba(0,0,0,0.4);
-				}
-			}
-		}
-		
-		.submit-btn {
-			background-color: rgba(0,0,0,0.4);
-			color: rgba(256,256,256,0.7);
-			border:0;
-			border-radius: 15px;
-			display: block;
-			margin: 15px auto; 
-			padding: 15px 45px;
-			width: 100%;
-			font-size: 13px;
-			font-weight: bold;
-			cursor: pointer;
-			opacity: 1;
-			visibility: visible;
-			-webkit-transition: all .3s ease;
-			
-			&:hover {
-				transition: all .3s ease;
-				background-color: rgba(0,0,0,0.8);
-			}
-		}
-	}
-	
-	.login {
-		position: absolute;
-		top: 20%;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #fff;
-		z-index: 5;
-		-webkit-transition: all .3s ease;
-		
-		&::before {
-			content: '';
-			position: absolute;
-			left: 50%;
-			top: -20px;
-			-webkit-transform: translate(-50%, 0);
-			background-color: #fff;
-			width: 200%;
-			height: 250px;
-			border-radius: 50%;
-			z-index: 4;
-			-webkit-transition: all .3s ease;
-		}
-		
-		.center {
-			position: absolute;
-			top: calc(50% - 10%);
-			left: 50%;
-			-webkit-transform: translate(-50%, -50%);
-			width: 65%;
-			z-index: 5;
-			-webkit-transition: all .3s ease;
-			
-			.form-title {
-				color: #000;
-				font-size: 1.7em;
-				text-align: center;
-
-				span {
-					color: rgba(0,0,0,0.4);
-					opacity: 0;
-			    visibility: hidden;
-				  -webkit-transition: all .3s ease;
-				}
-			}
-
-			.form-holder {
-				border-radius: 15px;
-				background-color: #fff;
-				border: 1px solid #eee;
-				overflow: hidden;
-				margin-top: 50px;
-				opacity: 1;
-				visibility: visible;
-				-webkit-transition: all .3s ease;
-
-				.input {
-					border: 0;
-					outline: none;
-					box-shadow: none;
-					display: block;
-					height: 30px;
-					line-height: 30px;
-					padding: 8px 15px;
-					border-bottom: 1px solid #eee;
-					width: 100%;
-					font-size: 12px;
-
-					&:last-child {
-						border-bottom: 0;
-					}
-					&::-webkit-input-placeholder {
-						color: rgba(0,0,0,0.4);
-					}
-				}
-			}
-
-			.submit-btn {
-				background-color: #6B92A4;
-				color: rgba(256,256,256,0.7);
-				border:0;
-				border-radius: 15px;
-				display: block;
-				margin: 15px auto; 
-				padding: 15px 45px;
-				width: 100%;
-				font-size: 13px;
-				font-weight: bold;
-				cursor: pointer;
-				opacity: 1;
-				visibility: visible;
-				-webkit-transition: all .3s ease;
-
-				&:hover {
-					transition: all .3s ease;
-					background-color: rgba(0,0,0,0.8);
-				}
-			}
-		}
-		
-		&.slide-up {
-			top: 90%;
-			-webkit-transition: all .3s ease;
-		}
-		
-		&.slide-up .center {
-			top: 10%;
-			-webkit-transform: translate(-50%, 0%);
-			-webkit-transition: all .3s ease;
-		}
-		
-		&.slide-up .form-holder,
-		&.slide-up .submit-btn {
-			opacity: 0;
-			visibility: hidden;
-			-webkit-transition: all .3s ease;
-		}
-		
-		&.slide-up .form-title {
-			font-size: 1em;
-			margin: 0;
-			padding: 0;
-			cursor: pointer;
-			-webkit-transition: all .3s ease;
-		}
-		
-		&.slide-up .form-title span {
-			margin-right: 5px;
-			opacity: 1;
-			visibility: visible;
-			-webkit-transition: all .3s ease;
-		}
-	}
-}
-</style>
-
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic' rel='stylesheet' type='text/css'>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	
@@ -290,31 +18,170 @@ html,body {
 	<link rel="stylesheet" type="text/css" href="css/ticker-style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
+<style type="text/css">
+	
+	 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+	
+	::selection{
+	  background: #4158d0;
+	  color: #fff;
+	}
+	.wrapper{
+	  width: 380px;
+	  background: #fff;
+	  border-radius: 15px;
+	  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+	  margin: auto;
+	}
+	.wrapper .title{
+	  font-size: 35px;
+	  font-weight: 600;
+	  text-align: center;
+	  line-height: 100px;
+	  color: #fff;
+	  user-select: none;
+	  border-radius: 15px 15px 0 0;
+	  background: linear-gradient(-135deg, #1a1a1a, #333333);
+
+	}
+	.wrapper form{
+	  padding: 10px 30px 50px 30px;
+	}
+	.wrapper form .field{
+	  height: 50px;
+	  width: 100%;
+	  margin-top: 20px;
+	  position: relative;
+	}
+	.wrapper form .field input{
+	  height: 100%;
+	  width: 100%;
+	  outline: none;
+	  font-size: 17px;
+	  padding-left: 20px;
+	  border: 1px solid lightgrey;
+	  border-radius: 25px;
+	  transition: all 0.3s ease;
+	}
+	.wrapper form .field input:focus,
+	form .field input:valid{
+	  border-color: #4158d0;
+	}
+	.wrapper form .field label{
+	  position: absolute;
+	  top: 50%;
+	  left: 20px;
+	  color: #999999;
+	  font-weight: 400;
+	  font-size: 17px;
+	  pointer-events: none;
+	  transform: translateY(-50%);
+	  transition: all 0.3s ease;
+	}
+	form .field input:focus ~ label,
+	form .field input:valid ~ label{
+	  top: 0%;
+	  font-size: 16px;
+	  color: #4158d0;
+	  background: #fff;
+	  transform: translateY(-50%);
+	}
+	form .content{
+	  display: flex;
+	  width: 100%;
+	  height: 50px;
+	  font-size: 16px;
+	  align-items: center;
+	  justify-content: space-around;
+	}
+	form .content .checkbox{
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+	form .content input{
+	  width: 15px;
+	  height: 15px;
+	  background: red;
+	}
+	form .content label{
+	  color: #262626;
+	  user-select: none;
+	  padding-left: 5px;
+	}
+	form .content .pass-link{
+	  color: "";
+	}
+	form .field input[type="submit"]{
+	  color: #fff;
+	  border: none;
+	  padding-left: 0;
+	  margin-top: -10px;
+	  font-size: 20px;
+	  font-weight: 500;
+	  cursor: pointer;
+	  background: linear-gradient(-135deg, #1a1a1a, #333333);
+	  transition: all 0.3s ease;
+	}
+	form .field input[type="submit"]:active{
+	  transform: scale(0.95);
+	}
+	form .signup-link{
+	  color: #262626;
+	  margin-top: 20px;
+	  text-align: center;
+	}
+	form .pass-link a,
+	form .signup-link a{
+	  color: #4158d0;
+	  text-decoration: none;
+	}
+	form .pass-link a:hover,
+	form .signup-link a:hover{
+	  text-decoration: underline;
+	}
+	
+</style>
+
+
+
 
 </head>
 <body>
 
-<div>
-	<jsp:include page="header.jsp" />
+<div>	
 
-	<div class="form-structor">
-		<div class="signup">
-			<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
-			<div class="form-holder">
-				<input type="text" class="input" placeholder="Name" />
-				<input type="email" class="input" placeholder="Email" />
-				<input type="password" class="input" placeholder="Password" />
-			</div>
-			<button class="submit-btn">Sign up</button>
-		</div>
-		<div class="login slide-up">
-			<div class="center">
-				<h2 class="form-title" id="login"><span>or</span><a href="login.jsp">Log in</a></h2>
-			</div>
-		</div>
-	</div>
+		<!-- Header
+		    ================================================== -->
+		
+		<jsp:include page="header.jsp" />
+		
+		<!-- End Header -->
+
+	<div class="wrapper">
+         <div class="title">
+            Sign Up
+         </div>
+         <form name="registrationForm" method="post" action="insert.jsp">
+            <div class="field">
+               <input type="text" placeholder="Full Name" name="fname" required>
+            </div>
+            <div class="field">
+               <input type="text" placeholder="Email Address" name="email" required>
+            </div>
+            <div class="field">
+               <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">Existing User? <a href="login.jsp">Log in</a>
+            </div>
+         </form>
+      </div>
 
 	<jsp:include page="footer.jsp" />
+	
 </div>
 
 </body>

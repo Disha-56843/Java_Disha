@@ -14,5 +14,9 @@
 	<classpathentry kind="lib" path="D:/java_workspace/External Jars/mysql-connector.jar"/>
 	<classpathentry kind="lib" path="D:/java_workspace/External Jars/mysql-connector-java-5.1.6.jar"/>
 	<classpathentry kind="lib" path="D:/java_workspace/External Jars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/java_workspace/External Jars/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/java_workspace/External Jars/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/java_workspace/External Jars/mail_1.4.jar"/>
+	<classpathentry kind="lib" path="D:/java_workspace/External Jars/json-20140107.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
